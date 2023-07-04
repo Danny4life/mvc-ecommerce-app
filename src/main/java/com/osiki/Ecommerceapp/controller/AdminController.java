@@ -56,9 +56,14 @@ public class AdminController {
         if(adminAuthentication != null){
             model.addAttribute("userLogin", adminAuthentication.getLogin());
 
-            return "personal_page";
+            return "personal_Adminpage";
         }else {
             return "error_page";
         }
+    }
+
+    @GetMapping("/dashboard")
+    public String dashboardPage(){
+        return "dashboard";
     }
 }
