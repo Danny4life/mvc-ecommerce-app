@@ -27,11 +27,17 @@ public class ProductController {
         return "create_product";
     }
 
-    @PostMapping("/dashboard")
+    @PostMapping("/products")
     public String saveProduct(@ModelAttribute("product") Product product){
         productService.saveProducts(product);
 
-        return "redirect:/dashboard";
+        return "redirect:/products";
 
+    }
+
+    @GetMapping("/products")
+    public String listProducts(Model model){
+        model.addAttribute("products", productService.getAllProducts());
+        return "products";
     }
 }

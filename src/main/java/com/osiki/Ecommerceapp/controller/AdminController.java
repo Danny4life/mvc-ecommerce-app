@@ -62,8 +62,4 @@ public class AdminController {
         }
     }
 
-    @GetMapping("/dashboard")
-    public String dashboardPage(){
-        return "dashboard";
-    }
 }
